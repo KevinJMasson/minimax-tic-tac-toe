@@ -204,7 +204,7 @@ int findMin(int a, int b) {
   for (unsigned int i = 0; i < 3; i++) {
     for (unsigned int j = 0; j < 3; j++) {
       if (board[i][j] == '-') {
-        board[i][j] = 'O';
+          board[i][j] = 'O';
         if (findMax(a,b) < score)
           score = findMax(a,b);
         board[i][j] = '-';
@@ -265,7 +265,7 @@ int findMin(int a, int b) {
         }
       }
 
-    //check for draw
+    //check for draw, if there is a space that can be played it will return 0
     for (int i = 0; i<3; i++) {
       for(int j = 0; j<3; j++) {
         if (board[i][j] == '-')
@@ -273,6 +273,6 @@ int findMin(int a, int b) {
       }
     }
 
-    //if game is not finished it will return that info
+    //if game is at a draw it will return 3
     return 3;
  }
